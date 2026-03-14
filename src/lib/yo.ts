@@ -8,7 +8,7 @@ export const VAULTS = {
     displayName: 'USD Savings',
     description: 'Optimized USDC yield across DeFi',
     asset: 'USDC',
-    icon: '💵',
+    icon: '/usd-coin-usdc-logo.svg',
     risk: 'low' as const,
     chains: [8453, 1, 42161],
     depositTokens: {

@@ -8,9 +8,10 @@ import { usePermitSign } from '@/hooks/usePermitSign';
 import { AgentActivityFeed } from './AgentActivityFeed';
 import { Bot, Zap, Shield, Loader2 } from 'lucide-react';
 import { useQueryClient } from '@tanstack/react-query';
+import { VaultIcon } from '@/components/ui/VaultIcon';
 
 const VAULT_OPTIONS = [
-  { id: 'yoUSD', label: 'USD', icon: '💵' },
+  { id: 'yoUSD', label: 'USD', icon: '/usd-coin-usdc-logo.svg' },
   { id: 'yoETH', label: 'ETH', icon: '⟠' },
   { id: 'yoBTC', label: 'BTC', icon: '₿' },
   { id: 'yoEUR', label: 'EUR', icon: '€' },
@@ -232,7 +233,7 @@ export function AgentModeCard() {
                         : 'bg-white/[0.03] border border-white/[0.04] text-text-dim hover:text-text-secondary'
                     }`}
                   >
-                    <span>{v.icon}</span>
+                    <VaultIcon icon={v.icon} size={14} />
                     <span>{v.label}</span>
                   </button>
                 ))}

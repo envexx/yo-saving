@@ -6,6 +6,7 @@ import { VAULTS, type VaultId } from '@/lib/yo';
 import { getExplorerUrl } from '@/lib/utils';
 import { ExternalLink, Clock } from 'lucide-react';
 import { useState } from 'react';
+import { VaultIcon } from '@/components/ui/VaultIcon';
 
 export function TransactionHistory() {
   const { address } = useAccount();
@@ -28,13 +29,13 @@ export function TransactionHistory() {
               <button
                 key={id}
                 onClick={() => setSelectedVault(id)}
-                className={`px-2.5 py-1 rounded-md text-[10px] sm:text-xs font-medium transition-all whitespace-nowrap ${
+                className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] sm:text-xs font-medium transition-all whitespace-nowrap ${
                   selectedVault === id
                     ? 'bg-accent/15 text-accent'
                     : 'text-text-dim hover:text-text-secondary'
                 }`}
               >
-                {VAULTS[id].icon} {VAULTS[id].asset}
+                <VaultIcon icon={VAULTS[id].icon} size={14} /> {VAULTS[id].asset}
               </button>
             ))}
           </div>
@@ -80,7 +81,7 @@ export function TransactionHistory() {
                     <div className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${
                       isDeposit ? 'bg-accent/10' : 'bg-orange-500/10'
                     }`}>
-                      <span className="text-[10px]">{isDeposit ? VAULTS[selectedVault].icon : '↑'}</span>
+                      {isDeposit ? <VaultIcon icon={VAULTS[selectedVault].icon} size={12} /> : <span className="text-[10px]">↑</span>}
                     </div>
                     <span className="text-xs sm:text-sm font-mono text-text-primary truncate">
                       {tx.assets?.formatted ?? '0'} {VAULTS[selectedVault].asset}

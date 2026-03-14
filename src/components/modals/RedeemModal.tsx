@@ -8,6 +8,7 @@ import { VAULTS, type VaultId } from '@/lib/yo';
 import { getExplorerUrl } from '@/lib/utils';
 import { parseUnits, formatUnits } from 'viem';
 import { ExternalLink, X, Check, Clock } from 'lucide-react';
+import { VaultIcon } from '@/components/ui/VaultIcon';
 
 interface RedeemModalProps {
   vaultId: VaultId;
@@ -134,7 +135,7 @@ export function RedeemModal({ vaultId, open, onOpenChange }: RedeemModalProps) {
                 />
                 <div className="flex items-center gap-2 mt-3">
                   <div className="w-6 h-6 rounded-full bg-surface-3 flex items-center justify-center text-xs">
-                    {vault.icon}
+                    <VaultIcon icon={vault.icon} size={16} />
                   </div>
                   <span className="text-sm font-medium text-text-secondary">{vault.asset}</span>
                 </div>

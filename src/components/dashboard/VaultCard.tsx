@@ -7,6 +7,7 @@ import { VAULTS, type VaultId } from '@/lib/yo';
 import { DepositModal } from '@/components/modals/DepositModal';
 import { RedeemModal } from '@/components/modals/RedeemModal';
 import { useAccount } from 'wagmi';
+import { VaultIcon } from '@/components/ui/VaultIcon';
 
 
 interface VaultCardProps {
@@ -93,7 +94,7 @@ export function VaultCard({ vaultId }: VaultCardProps) {
           {/* Header: icon + name */}
           <div className="flex items-center gap-2.5 mb-3 sm:mb-4">
             <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-surface-3 border border-white/[0.06] flex items-center justify-center text-sm sm:text-lg shrink-0">
-              {vault.icon}
+              <VaultIcon icon={vault.icon} size={20} />
             </div>
             <div className="flex-1 min-w-0">
               <h3 className="font-semibold text-xs sm:text-sm text-text-primary leading-tight truncate">

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useVaultHistory } from '@yo-protocol/react';
 import { VAULTS, type VaultId } from '@/lib/yo';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { VaultIcon } from '@/components/ui/VaultIcon';
 
 interface YieldChartProps {
   vaultId?: VaultId;
@@ -34,13 +35,13 @@ export function YieldChart({ vaultId = 'yoUSD' }: YieldChartProps) {
             <button
               key={id}
               onClick={() => setSelectedVault(id)}
-              className={`px-2.5 py-1 rounded-md text-[10px] sm:text-xs font-medium transition-all whitespace-nowrap ${
+              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] sm:text-xs font-medium transition-all whitespace-nowrap ${
                 selectedVault === id
                   ? 'bg-accent/15 text-accent'
                   : 'text-text-dim hover:text-text-secondary'
               }`}
             >
-              {VAULTS[id].icon} {VAULTS[id].asset}
+              <VaultIcon icon={VAULTS[id].icon} size={14} /> {VAULTS[id].asset}
             </button>
           ))}
         </div>
