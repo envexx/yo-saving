@@ -9,6 +9,7 @@ export const VAULTS = {
     description: 'Optimized USDC yield across DeFi',
     asset: 'USDC',
     icon: '/usd-coin-usdc-logo.svg',
+    coingeckoId: 'usd-coin',
     risk: 'low' as const,
     chains: [8453, 1, 42161],
     depositTokens: {
@@ -26,6 +27,7 @@ export const VAULTS = {
     description: 'Best ETH yield, risk-adjusted',
     asset: 'WETH',
     icon: '⟠',
+    coingeckoId: 'ethereum',
     risk: 'low' as const,
     chains: [8453, 1],
     depositTokens: {
@@ -42,6 +44,7 @@ export const VAULTS = {
     description: 'Bitcoin yield via cbBTC',
     asset: 'cbBTC',
     icon: '₿',
+    coingeckoId: 'bitcoin',
     risk: 'medium' as const,
     chains: [8453, 1],
     depositTokens: {
@@ -58,6 +61,7 @@ export const VAULTS = {
     description: 'Euro stablecoin yield',
     asset: 'EURC',
     icon: '€',
+    coingeckoId: 'euro-coin',
     risk: 'low' as const,
     chains: [8453, 1],
     depositTokens: {

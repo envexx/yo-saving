@@ -110,8 +110,12 @@ export function RedeemModal({ vaultId, open, onOpenChange }: RedeemModalProps) {
             <>
               {/* Error */}
               {error && (
-                <div className="bg-danger/5 border border-danger/10 rounded-xl p-3">
-                  <p className="text-xs text-danger">{error.message || 'Transaction failed.'}</p>
+                <div className="bg-danger/5 border border-danger/10 rounded-xl p-3 overflow-hidden">
+                  <p className="text-xs text-danger break-words line-clamp-3">
+                    {error.message?.length && error.message.length > 120
+                      ? error.message.slice(0, 120) + '…'
+                      : error.message || 'Transaction failed.'}
+                  </p>
                 </div>
               )}
 
